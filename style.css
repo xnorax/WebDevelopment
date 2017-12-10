@@ -65,8 +65,24 @@ h6{
     padding-top: 5%;
     text-align: center;
 }
+
+/**/
+.container {
+  display: flex;                  /* establish flex container */
+  flex-direction: row;            /* default value; can be omitted */
+  flex-wrap: nowrap;              /* default value; can be omitted */
+  justify-content: space-between; 
+  margin-left: 15%;
+    margin-right: 15%;
+}
+.container > div {
+  width: 250px;
+  height: 250px;
+}
+/**/
+
 .hover-effect {
-    
+    width: calc(25% - 30px);
     float: left;
     text-align: center;
     height: 300px;
@@ -81,40 +97,53 @@ h6{
         transition: 0.3s;
 }
 
-.hover-effect img {
+    .hover-effect img {
         -moz-transition: 0.3s;
         -o-transition: 0.3s;
         -webkit-transition: 0.3s;
         transition: 0.3s;
         background-size: cover;
-        height: 90%;
-       width: 90%;
-}
+        height: 100%;
+       width: 100%;
+    }
 
-.hover-effect .description {
+    .hover-effect .description {
         position: absolute;
         top: 0;
         background: rgba(0,0,0,0.8);
         width: 100%;
-        height: 94%;
+        height: 100%;
         opacity: 0;
         -moz-transition: 0.3s;
         -o-transition: 0.3s;
         -webkit-transition: 0.3s;
         transition: 0.3s;
-}
+    }
 
-
+.hover-effect .description h2,
 .hover-effect .description p{
    max-width: 90%;
    display: block;
    margin: 0 auto;
 }
 
-.hover-effect .description p {
-    color: white;
-    padding-top: 30%;
-    font-size: 24px;
+
+        .hover-effect .description h2 {
+            font-size: 36px;
+            -moz-transform: translateY(-25px);
+            -ms-transform: translateY(-25px);
+            -o-transform: translateY(-25px);
+            -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+            -moz-transition: 0.3s;
+            -o-transition: 0.3s;
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+            padding-top: 55px;
+        }
+
+    .hover-effect .description p {
+        font-size: 24px;
         -moz-transform: translateY(25px);
         -ms-transform: translateY(25px);
         -o-transform: translateY(25px);
@@ -124,26 +153,51 @@ h6{
         -o-transition: 0.3s;
         -webkit-transition: 0.3s;
         transition: 0.3s;
-}
+        color: white;
+    }
 
-.hover-effect:hover img {
+    .hover-effect:hover img {
         -moz-transform: scale(1.1);
         -ms-transform: scale(1.1);
         -o-transform: scale(1.1);
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
-}
+    }
 
 .hover-effect:hover .description{
    opacity: 1;
    cursor: pointer;
 }
 
-.hover-effect:hover .description h2,
-.hover-effect:hover .description p {
+    .hover-effect:hover .description h2,
+    .hover-effect:hover .description p {
         -moz-transform: translateY(0);
         -ms-transform: translateY(0);
         -o-transform: translateY(0);
         -webkit-transform: translateY(0);
         transform: translateY(0);
+    }
+
+@media(max-width: 1200px){
+   .hover-effect {
+    width: calc(50% - 30px);
+}
+}
+
+@media(max-width: 480px){
+   .hover-effect {
+    width: calc(100% - 30px);
+      float: none;
+}
+   .hover-effect .description h2{
+    font-size: 30px;
+}
+   .hover-effect .description p{
+    font-size: 18px;
+}
+}
+
+footer{
+    text-align: center;
+    padding: 12px;
 }
